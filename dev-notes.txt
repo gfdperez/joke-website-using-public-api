@@ -1,0 +1,5 @@
+Setting up project:
+    1. npm init
+    2. start index.js
+    3. npm express, ejs
+    4. Make views folder and index.ejs
