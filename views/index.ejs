@@ -7,17 +7,88 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
   </head>
   <body>
-    <!-- <%= content %> -->
     <div class="px-4 py-5 my-5 text-center">
-      <h1 class="display-5 fw-bold text-body-emphasis">JOKE GENERATOR</h1>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
-          Single Joke
-        </button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-          Two-Part Joke
-        </button>
-      </div>
+        <h1 class="display-5 fw-bold text-body-emphasis">JOKE GENERATOR</h1>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <form action="/setJokeType" method="post">
+                <input type="hidden" name="type" value="single">
+                <button class="btn <%= locals.isSingleJoke ?  " btn-primary" : "btn-outline-secondary" %> btn-lg px-4
+                    gap-3">
+                    Single Joke
+                </button>
+            </form>
+            <form action="/setJokeType" method="post">
+                <input type="hidden" name="type" value="two-part">
+                <button class="btn <%= locals.isSingleJoke ?  " btn-outline-secondary" : "btn-primary" %> btn-lg px-4">
+                    Two-Part Joke
+                </button>
+            </form>
+        </div>
+        <div>
+            <%= locals.isSingleJoke %>
+        </div>
+        <div>
+            <%= locals.joke %>
+        </div>
+        <form action="/getSingleJoke" method="post">
+            <div class="border">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="programming" value="true">
+                    <label class="form-check-label">Programming</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="misc" value="true">
+                    <label class="form-check-label">Misc</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="dark" value="true">
+                    <label class="form-check-label">Dark</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="pun" value="true">
+                    <label class="form-check-label">Pun</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="spooky" value="true">
+                    <label class="form-check-label">Spooky</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="christmas" value="true">
+                    <label class="form-check-label">Christmas</label>
+                </div>
+            </div>
+
+            <div class="border">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="nsfw" value="true">
+                    <label class="form-check-label">NSFW</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="religious" value="true">
+                    <label class="form-check-label">Religious</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="political" value="true">
+                    <label class="form-check-label">Political</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="racist" value="true">
+                    <label class="form-check-label">Racist</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="sexist" value="true">
+                    <label class="form-check-label">Sexist</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="explicit" value="true">
+                    <label class="form-check-label">Explicit</label>
+                </div>
+            </div>
+            <div class="mt-4 pt-4">
+                <input class="btn btn-primary" type="submit" value="Generate Joke">
+            </div>
+            
+        </form>
     </div>
   </body>
 </html>
