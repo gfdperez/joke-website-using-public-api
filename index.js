@@ -1,9 +1,17 @@
 import express from "express";
 import axios from "axios";
+import bodyParser from "body-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const app = express();
 const port = 3000;
-
 const API_URL = "https://v2.jokeapi.dev/";
+
+app.use("/public", express.static(__dirname + "/public"));
+app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+app.use(bodyParser.urlencoded({ extended : true }));
 
 app.get("/", async (req, res) => {
     try {

@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joke Website</title>
-</head>
-<body>
-    <%= content %>
-</body>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- <%= content %> -->
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">JOKE GENERATOR</h1>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+          Single Joke
+        </button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+          Two-Part Joke
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
