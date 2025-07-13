@@ -3,3 +3,7 @@ Setting up project:
     2. start index.js
     3. npm express, ejs
     4. Make views folder and index.ejs
+
+Middlewares Used:
+    1. Body Parser
+    2. Bootstrap Root Directory (CSS and JS)
