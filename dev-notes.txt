@@ -7,3 +7,16 @@ Setting up project:
 Middlewares Used:
     1. Body Parser
     2. Bootstrap Root Directory (CSS and JS)
+
+Proposed Design:
+    1. The joke generator and all it web components will be enclosed in a card container
+    2. The design (color) of the page toggles between two colors when toggling with Single and Two Part Joke
+        like light mode and dark mode
+    3. Color Theme: (TODO)
+    4. The dropdowns can be put in a modal instead (?)
+        - Can be activated by a Preferences button
+    5. Generate Joke and Preferences Buttons can be put beside together.
+    6. The container of the Joke itself should be wrapped.
+        a. Pick a font and color of the text.
+    7. For the two-part joke, there should be a button that appears and disappears when showing the second part of the joke
+        It should disable the generate and preferences button when activated.
